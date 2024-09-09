@@ -1,0 +1,50 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/whatsapp_business_db?currentSchema=public
+    username: postgres
+    password: postgres
+    hikari:
+      data-source-properties:
+        stringtype: unspecified
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        maintainTimeStats: false
+        maximum-pool-size: 5
+        connection-timeout: 5000
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+    generate-ddl: false
+
+whatsapp:
+  mode: subscribe
+  verification_token: rutuja
+  api:
+    url: https://graph.facebook.com/v20.0/359039663964925/messages
+    token: EAAMWm1GeZBjIBO0zucTZCWg1iEBn1e7cLV2FeQvmjpMmLizjxqamINsDDiJkZAHFAgFKJxmrPrlDCabZBZC2nQAehUL2XZB5uzcGIQQZA9KNAfTWpA2aa3ga5maTN2LXOjmjZCuxZAOaQs67v2f0WdN5Ti1ZC8UZAbNozvzZAbDZAei8aTVaSvKguYV0sK2NEcQdvJLEZBSSFbNVaPzyUpP0d8eFYgnqNpMKzDLBY06mcZD
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.http: DEBUG
+
+server:
+  port: 9002

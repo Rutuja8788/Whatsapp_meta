@@ -1,0 +1,25 @@
+{
+  "recipient_type": "individual",
+  "to": "918788530002",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "body": {
+      "text": "Welcome to our service!"
+    },
+    "footer": {
+      "text": "Thank you!"
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "btn_001",
+            "title": "Get Started"
+          }
+        }
+      ]
+    }
+  }
+}
